@@ -33,5 +33,6 @@ class UsrRolesController < ApplicationController
   def role_params
     params.require(:usr_role).permit(:role_name, :description)
   end
+  #comment
 
 end
