@@ -9,6 +9,6 @@ class UsrRole < ApplicationRecord
   has_many :usr_users, through: :usr_user_roles
 
   #role_name validation
-  validates :role_name, presence: true
+  #validates :role_name, presence: true
 
 end
