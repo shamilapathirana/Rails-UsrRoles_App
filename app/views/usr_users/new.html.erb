@@ -1,0 +1,23 @@
+<div class="form">
+  <h1>Add new User</h1><br>
+
+  <hr>
+
+  <%= form_for(@user) do |u| %>
+
+      <%= u.label(:name) %>
+      <%= u.text_field(:name, {:placeholder => "Enter name",:class => 'form-control'})%><br>
+
+      <%= fields_for(@user_roles) do |ur| %>
+      <div class="#">
+        <%= ur.label(:select_roles)%><br/>
+        <%= collection_check_boxes(:usr_roles, :id, @all_roles, :id, :role_name, {}, {:multiple => true, :class => 'checkbox'})%>
+      </div>
+      <% end %>
+      <br/>
+
+      <%= u.submit "Create User", class: "btn btn-primary" %>
+
+  <% end %>
+
+</div>
