@@ -3,7 +3,7 @@ require 'test_helper'
 class UsrRoleTest < ActiveSupport::TestCase
 
   def setup
-    @role = usr_roles(:role1)
+    @role = usr_roles(:role1) #role one inside fixtures -> usr_roles.yml
   end
 
   test 'valid user' do

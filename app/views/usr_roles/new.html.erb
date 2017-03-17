@@ -17,6 +17,19 @@
             <%= collection_select(:usr_permissions, :id, @all_permissions, :id, :permission_name, {}, {:multiple => true,:class => 'form-control'})%>
           </div>
       <% end %>
+
+<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+      <% @all_permissions.each do |rp|%>
+          <div>
+            <h5><%= rp.permission_name %></h5>
+            <%= form_for(@role_permission) do |m| %>
+            <%= m.select(:value, options_for_select([['Hide','hide'],['Read only', 'read only']]))%>
+            <%end%>
+          </div>
+      <% end %>
+<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+
+
       <br/>
 
       <%= m.submit "Create Role", class: "btn btn-success" %>

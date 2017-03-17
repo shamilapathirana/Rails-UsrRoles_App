@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   root 'usr_roles#home', as: 'home'
 
   resources :usr_roles
-  resources :usr_users
+  resources :usr_contacts
 
 end

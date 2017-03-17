@@ -3,12 +3,12 @@
 
   <hr>
 
-  <%= form_for(@user) do |u| %>
+  <%= form_for(@contact) do |u| %>
 
       <%= u.label(:name) %>
       <%= u.text_field(:name, {:placeholder => "Enter name",:class => 'form-control'})%><br>
 
-      <%= fields_for(@user_roles) do |ur| %>
+      <%= fields_for(@contact_roles) do |ur| %>
       <div class="#">
         <%= ur.label(:select_roles)%><br/>
         <%= collection_check_boxes(:usr_roles, :id, @all_roles, :id, :role_name, {}, {:multiple => true, :class => 'checkbox'})%>

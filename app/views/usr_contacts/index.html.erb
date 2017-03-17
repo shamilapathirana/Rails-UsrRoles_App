@@ -1,0 +1,12 @@
+<div class="container" >
+  <h1>All Users</h1>
+  <hr>
+  <% @contacts.each do |contact|%>
+      <div>
+        <h4><%= contact.id %> . <%= link_to contact.name, usr_contact_path(contact) %></h4>
+      </div>
+      <div>
+
+      </div>
+  <% end %>
+</div>

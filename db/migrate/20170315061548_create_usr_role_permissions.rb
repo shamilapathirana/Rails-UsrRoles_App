@@ -4,6 +4,7 @@ class CreateUsrRolePermissions < ActiveRecord::Migration[5.0]
 
       t.belongs_to :usr_role, index: true
       t.belongs_to :usr_permission, index: true
+      t.string :value
 
       t.timestamps
     end

@@ -16,7 +16,13 @@ class UsrRolesController < ApplicationController
       if !permission.empty?
         @role.usr_role_permissions.build(:usr_permission_id => permission)
       end
+      #######-----------------------------------------
+      @role_permission = UsrRolePermission.new(:usr_permission_id => permission)
     end
+    #######-----------------------------------------
+    #@role_permission = UsrRolePermission.new
+    #params[:usr_role_permissions]
+    #######-----------------------------------------
     if @role.save
       redirect_to home_path
     else
@@ -33,6 +39,5 @@ class UsrRolesController < ApplicationController
   def role_params
     params.require(:usr_role).permit(:role_name, :description)
   end
-  #comment
 
 end
